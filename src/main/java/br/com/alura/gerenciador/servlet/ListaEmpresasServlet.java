@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ListaEmpresasServlet
- */
+import br.com.alura.gerenciador.modelo.Banco;
+import br.com.alura.gerenciador.modelo.Empresa;
+
 @WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 	
@@ -22,7 +22,7 @@ public class ListaEmpresasServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		Banco banco = new Banco();
-		List<Empresa> lista = banco.getEmpresa();
+		List<Empresa> lista = banco.getEmpresas();
 		
 		request.setAttribute("empresas", lista);
 		
