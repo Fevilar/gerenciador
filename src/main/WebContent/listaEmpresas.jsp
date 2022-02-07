@@ -14,9 +14,10 @@
 
 	<c:if test="${not empty empresa}">
 		A Empresa: ${ empresa } - CNPJ: ${ cnpj } - Foi cadastrada com sucesso!
-		<br />	
-		<br />	
 	</c:if>
+		
+	<br />	
+	<br />	
 		
 	LISTA DE EMPRESAS: <br />	
 	
@@ -26,7 +27,7 @@
 			<li>
 				${empresa.nome} - CNPJ: ${empresa.cnpj} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
 				<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id }">Editar</a>
-				<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id }">Remover</a>
+				<a href="/gerenciador/entrada?acao=RemovaEmpresa&id=${empresa.id }">Remover</a>
 			</li>
 		</c:forEach>	
 	</ul>
