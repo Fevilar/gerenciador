@@ -10,20 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class ListaEmpresas implements Acao {
+public class ListaEmpresasComOrdem implements Acao{
 
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Listando Empresas");
-		
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		System.out.println("listando empresas em ordem alfabetica");
+
 		Banco banco = new Banco();
 		List<Empresa> lista = banco.getEmpresas();
 
+		lista.sort((e1, e2) -> {
+			return e1.getNome().compareTo(e2.getNome());
+		});
+
 		request.setAttribute("empresas", lista);
 
-		return "forward:/listaEmpresas.jsp";
+		return "forward:listaEmpresas.jsp";
 	}
-	
-	
 	
 }
