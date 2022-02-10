@@ -4,28 +4,40 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.acao.Acao;
 
-@WebServlet("/entrada")
+//@WebServlet(urlPatterns="/entrada") //Transferido para web.xml para ordenar a entrada
 public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/*
 	 * CONTROLLER - A função do controlador é receber as requisições e delegar as
 	 * chamadas para as ações correspondentes.
+	 * 
+	 * http://localhost:8080/gerenciador/entrada?acao=LoginForm
+	 * 
 	 */
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// http://localhost:8080/gerenciador/entrada?acao=ListaEmpresas
+ 
 		String paramAcao = request.getParameter("acao");
+		
+//		HttpSession sessao = request.getSession();
+//		boolean usuarioNaoLogado = (sessao.getAttribute("usuarioLogado") == null);
+//		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+//		
+//		if(ehUmaAcaoProtegida && usuarioNaoLogado) { // Se usuário não está logado = true
+//			response.sendRedirect("entrada?acao=LoginForm");
+//			return; // Sai da execução do código.
+//		}
 
+	
 		String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
 		
 		// ** Atenção ** newIstance() está riscado pois possivelmente pode ser eliminado ou substituido no Java.

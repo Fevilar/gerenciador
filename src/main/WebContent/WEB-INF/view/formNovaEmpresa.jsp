@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<!-- O metodo post esconde os parametros no endereço do browser -->
+	<c:import url="Logout-parcial.jsp" />
 	
+	<!-- O metodo post esconde os parametros no endereço do browser -->
 	<form action = "${LinkEntradaServlet}" method="post">
 	
 		Nome: <input type="text" name="nome" /> 

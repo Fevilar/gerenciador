@@ -11,15 +11,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<!-- O metodo post esconde os parametros no endereço do browser -->
+	<c:import url="Logout-parcial.jsp" />
 	
+	<!-- O metodo post esconde os parametros no endereço do browser -->
 	<form action = "${linkEntradaServlet}" method="post">
 		
 		<!-- value popula os campos com os dados vindo da request (MostraEmpresaServlet.java) -->
 		Nome: <input type="text" name="nome" value="${empresa.nome }" /> 
-		CNPJ: <input type="text" name="cnpj" value="${empresa.cnpj }" /> <br />
-		Data Abertura: <input type="text" name="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>" /> <br />
+		CNPJ: <input type="text" name="cnpj" value="${empresa.cnpj }" /> <br /> <br />
+		Data Abertura: <input type="text" name="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>" /> <br /><br />
 		<input type="hidden" name="id" value="${empresa.id }" /> 
 		<input type="hidden" name="acao" value="AlteraEmpresa" /> 	
 		<input type="submit" />

@@ -32,10 +32,10 @@ public class Banco {
 		//Incluindo Usuários para Teste
 		Usuario u1 = new Usuario();
 		u1.setLogin("felipe");
-		u1.setSenha("123456");
+		u1.setSenha("1905");
 		Usuario u2 = new Usuario();
 		u2.setLogin("user");
-		u2.setSenha("123456");
+		u2.setSenha("1905");
 		listaUsuarios.add(u1);
 		listaUsuarios.add(u2);
 		
