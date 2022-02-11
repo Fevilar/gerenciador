@@ -18,7 +18,6 @@ import br.com.alura.gerenciador.acao.Acao;
 //@WebFilter("/entrada")
 public class ControladorFilter extends HttpFilter implements Filter {
 
-	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 
 		System.out.println("ControladorFilter");
